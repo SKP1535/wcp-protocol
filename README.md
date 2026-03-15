@@ -214,13 +214,34 @@ http://localhost:8000/docs
 
 ---
 
+## OpenAPI Specification
+
+The WCP API is defined using an OpenAPI specification.
+
+Location:
+
+spec/wcp-openapi.yaml
+
+This allows automatic SDK generation and interactive documentation.
+
+---
+
 # Repository Structure
 
 ```
 wcp-protocol
 │
+├── README.md
+├── ROADMAP.md
+├── CONTRIBUTING.md
+├── CODE_OF_CONDUCT.md
+├── SECURITY.md
+├── LICENSE
+│
 ├── docs
-│   └── logo.svg
+│   ├── logo.svg
+│   ├── architecture.md
+│   └── diagrams
 │
 ├── whitepaper
 │   └── wcp-whitepaper-v0.1.md
@@ -235,11 +256,22 @@ wcp-protocol
 │   ├── WCP-P0007-authentication-security.md
 │   └── WCP-P0008-capability-discovery.md
 │
-├── diagrams
+├── spec
+│   └── wcp-openapi.yaml
 │
 ├── examples
+│   ├── simple-workflow
+│   └── agent-example
+│
+├── sdk
+│   ├── python
+│   └── javascript
+│
+├── cli
+│   └── python
 │
 └── reference
+    └── wcp-fastapi-server
 ```
 
 ---

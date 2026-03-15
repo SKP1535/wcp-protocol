@@ -1,0 +1,161 @@
+openapi: 3.0.3
+
+info:
+  title: Work Coordination Protocol (WCP)
+  description: |
+    WCP is an open protocol for coordinating work between humans,
+    AI agents, and software systems.
+  version: "0.1"
+
+servers:
+  - url: http://localhost:8000
+
+paths:
+
+  /work:
+    post:
+      summary: Create a new work object
+      operationId: createWork
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Work'
+      responses:
+        "200":
+          description: Work created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Work'
+
+    get:
+      summary: List work objects
+      operationId: listWork
+      responses:
+        "200":
+          description: List of work objects
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Work'
+
+  /work/{work_id}/claim:
+    post:
+      summary: Claim work
+      operationId: claimWork
+      parameters:
+        - name: work_id
+          in: path
+          required: true
+          schema:
+            type: string
+
+        - name: agent_id
+          in: query
+          required: true
+          schema:
+            type: string
+
+      responses:
+        "200":
+          description: Work claimed
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Work'
+
+  /work/{work_id}/complete:
+    post:
+      summary: Complete work
+      operationId: completeWork
+      parameters:
+        - name: work_id
+          in: path
+          required: true
+          schema:
+            type: string
+
+      responses:
+        "200":
+          description: Work completed
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Work'
+
+  /agents/register:
+    post:
+      summary: Register agent
+      operationId: registerAgent
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Agent'
+
+      responses:
+        "200":
+          description: Agent registered
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Agent'
+
+  /agents:
+    get:
+      summary: List registered agents
+      operationId: listAgents
+      responses:
+        "200":
+          description: Agent list
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Agent'
+
+components:
+
+  schemas:
+
+    Work:
+      type: object
+      properties:
+        work_id:
+          type: string
+
+        type:
+          type: string
+
+        status:
+          type: string
+
+        assigned_to:
+          type: string
+          nullable: true
+
+        context:
+          type: object
+          additionalProperties: true
+
+        depends_on:
+          type: array
+          items:
+            type: string
+
+    Agent:
+      type: object
+      properties:
+        agent_id:
+          type: string
+
+        capabilities:
+          type: array
+          items:
+            type: string
