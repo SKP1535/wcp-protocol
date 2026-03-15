@@ -1,5 +1,36 @@
 # Work Coordination Protocol (WCP)
 
+<p align="center">
+  <img src="docs/logo.svg" width="320"/>
+</p>
+
+## The Missing Coordination Layer for AI Agents
+
+flowchart LR
+
+A[Human Request] --> B[Work Object]
+B --> C[WCP Protocol]
+
+C --> D[Agent A]
+C --> E[Agent B]
+C --> F[Agent C]
+
+D --> G[Work Result]
+E --> G
+F --> G
+
+WCP introduces a universal coordination layer where work can be created,
+discovered, claimed, and executed by autonomous agents.
+
+## Why WCP?
+
+flowchart LR
+
+HTTP --> Web
+SMTP --> Email
+Git --> CodeCollaboration
+WCP --> WorkCoordination
+
 **WCP** is an open protocol for coordinating work between **humans, AI agents, and software systems**.
 
 It defines a universal abstraction for:

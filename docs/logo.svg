@@ -1,0 +1,18 @@
+<svg width="420" height="120" viewBox="0 0 420 120" xmlns="http://www.w3.org/2000/svg">
+  <rect width="420" height="120" rx="12" fill="#0f172a"></rect>
+  
+  <circle cx="60" cy="60" r="28" fill="#22c55e"></circle>
+  <circle cx="100" cy="35" r="12" fill="#3b82f6"></circle>
+  <circle cx="100" cy="85" r="12" fill="#3b82f6"></circle>
+
+  <line x1="60" y1="60" x2="100" y2="35" stroke="#94a3b8" stroke-width="3"></line>
+  <line x1="60" y1="60" x2="100" y2="85" stroke="#94a3b8" stroke-width="3"></line>
+
+  <text x="160" y="70" font-family="Arial, Helvetica, sans-serif" font-size="34" fill="#f1f5f9" font-weight="bold">
+        WCP
+  </text>
+
+  <text x="160" y="95" font-family="Arial, Helvetica, sans-serif" font-size="14" fill="#94a3b8">
+        Work Coordination Protocol
+  </text>
+</svg>
