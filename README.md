@@ -5,6 +5,7 @@
 </p>
 
 ## The Missing Coordination Layer for AI Agents
+
 ```mermaid
 flowchart LR
 
@@ -18,11 +19,13 @@ C --> F[Agent C]
 D --> G[Work Result]
 E --> G
 F --> G
+```
 
 WCP introduces a universal coordination layer where work can be created,
 discovered, claimed, and executed by autonomous agents.
 
 ## Why WCP?
+
 ```mermaid
 flowchart LR
 
@@ -30,6 +33,7 @@ HTTP --> Web
 SMTP --> Email
 Git --> CodeCollaboration
 WCP --> WorkCoordination
+```
 
 **WCP** is an open protocol for coordinating work between **humans, AI agents, and software systems**.
 
