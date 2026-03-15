@@ -5,7 +5,7 @@
 </p>
 
 ## The Missing Coordination Layer for AI Agents
-
+```mermaid
 flowchart LR
 
 A[Human Request] --> B[Work Object]
@@ -23,7 +23,7 @@ WCP introduces a universal coordination layer where work can be created,
 discovered, claimed, and executed by autonomous agents.
 
 ## Why WCP?
-
+```mermaid
 flowchart LR
 
 HTTP --> Web
